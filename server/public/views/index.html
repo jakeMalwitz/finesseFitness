@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Solo Project</title>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/vendors/fullcalendar.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="/styles/stylesheet.css"/>
+    <script type="text/javascript" src="/vendors/jquery.min.js"></script>
+    <script type="text/javascript" src="/vendors/moment.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendors/xeditable.min.js"></script>
+    <script type="text/javascript" src="/vendors/calendar.js"></script>
+    <script type="text/javascript" src="/vendors/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="/vendors/gcal.js"></script>
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/createController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/updateController.js"></script>
+
+  </head>
+  <body ng-app="myApp">
+    <header>
+      <h1>Finesse Fitness</h1>
+      <div class="navContainer">
+      <div ng-include="'/views/nav.html'"></div>
+      </div>
+    </header>
+
+   <main ng-view></main>
+
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<div class="container">
+<div class="row">
+ <div class="col-md-4">
+<button ng-click="firstClicked=true">Create New Workout</button>
+<div class="createWorkoutContainer" ng-show="firstClicked">
+<form id="createWorkoutForm">
+  <label for="workoutName">Workout Name:</label>
+  <input type="text" id="workoutName" ng-model="workoutName"/>
+</form>
+
+<select id="selectDropDown" ng-model="activity" ng-options="activity.name for activity in activities" ng-click="thirdClicked=true">
+  <option value="">Select Activity</option>
+</select>
+<button ng-click="secondClicked=true">Create Activity</button>
+</div>
+
+
+<div class="activityContainer" ng-show="secondClicked">
+<form id="activityForm">
+  <label for="activityName">Activity</label>
+  <input type="text" id="activityName" name="name" ng-model="activity.name"/>
+
+  <label for="type">Type(Plyometric, Cardio, Weight)</label>
+  <input type="text" id="type" name="type" ng-model="activity.type"/>
+
+  <button ng-click="addNewActivity()">Save Activity</button>
+</form>
+</div>
+</div>
+
+<div class="col-md-4">
+  <div class="form2" ng-show="thirdClicked" >
+  <h3>Specifics/Staging</h3>
+
+  <p>{{activity.name}}</p>
+  <p>{{activity.type}}</p>
+
+  <label for="activityReps">Reps:</label>
+  <input type="number" class="small" id="activityReps" name="reps" ng-model="reps"/>
+  <br>
+  <label for="activitySets">Sets:</label>
+  <input type="number" class="small" id="activitySets" name="sets" ng-model="sets"/>
+  <br>
+  <label for="activityWeight">Weight (lbs):</label>
+  <input type="number" class="small" id="activityWeight" name="weight" ng-model="weight"/>
+   <br>
+  <label for="activityDuration">Duration (min):</label>
+  <input type="number" class="small" id="activityDuration" name="duration" ng-model="duration"/>
+  <br>
+  <button ng-click="addActivity(activity)">Add Activity to Workout</button>
+</div>
+</div>
+<div class="col-md-4">
+<h3>Current Workout Acitivity List</h3>
+<div class="activitiesContainer" ng-repeat="activity in workoutActivities">
+  <p>{{activity.name}}</p>
+<button id="removeActivity" ng-click="removeActivity(activity._id)">Remove Activity</button>
+</div>
+<label for="description">Add a Description!</label>
+<textarea type="text" id="description" name="description" ng-model="description"></textarea>
+<button id="save" ng-click="saveWorkout()">Save Workout</button>
+</div>
+</div>
+</div>
