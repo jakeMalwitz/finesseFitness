@@ -20,6 +20,7 @@ app.get('/', function(req, res) {
 
 //Mongoose
 var databaseUri = 'mongodb://localhost:27017/omicron';
+// var databaseUri = 'mongodb://jake:jake123@ds033126.mlab.com:33126/heroku_032xqtsm';
 mongoose.connect(databaseUri);
 
 mongoose.connection.on('connected', function() {

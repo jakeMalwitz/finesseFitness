@@ -18,23 +18,23 @@
 <div class="activityContainer" ng-show="secondClicked">
 <form id="activityForm">
   <label for="activityName">Activity</label>
-  <input type="text" id="activityName" name="name" ng-model="activity.name"/>
+  <input type="text" id="activityName" name="name" ng-model="name"/>
 
   <label for="type">Type(Plyometric, Cardio, Weight)</label>
-  <input type="text" id="type" name="type" ng-model="activity.type"/>
+  <input type="text" id="type" name="type" ng-model="type"/>
 
-  <button ng-click="addNewActivity()">Save Activity</button>
+  <button ng-click="addNewActivity()" ng-click="" ng-hide="secondClick">Save Activity</button>
 </form>
 </div>
 </div>
 
 <div class="col-md-4">
-  <div class="form2" ng-show="thirdClicked" >
-  <h3>Specifics/Staging</h3>
+  <h3>Add More Info!</h3>
 
   <p>{{activity.name}}</p>
   <p>{{activity.type}}</p>
 
+<div class="form2" ng-show="thirdClicked" >
   <label for="activityReps">Reps:</label>
   <input type="number" class="small" id="activityReps" name="reps" ng-model="reps"/>
   <br>

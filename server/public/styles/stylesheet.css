@@ -3,15 +3,9 @@ html, body, * {
   padding: 0px;
 }
 
-
-This border is used to show that the element is focused (i.e. you can type in the input or press the button with Enter). You can remove it, though:
-
 textarea:focus, input:focus{
   outline: none;
 }
-You may want to add some other way for users to know what element has keyboard focus though for usability.
-
-Chrome will also apply highlighting to other elements such as DIV's used as modals. To prevent the highlight on those and all other elements as well, you can do:
 
 *:focus {
   outline: none;
@@ -49,7 +43,7 @@ header h1 {
 
 .container .row {
   font: 400 24px/1.3 'Oleo Script', Helvetica, sans-serif;
-  color: white;
+  color: #3399ff;
   text-shadow: 1px 1px 0px #ff99ff;
   margin-top: 15px;
   text-align: center;
@@ -59,18 +53,14 @@ header h1 {
 .col-md-3 {
   max-width: 300px;
   max-height: 800px;
-
+  display: flex;
   padding: 0px;
-  margin-right: 5px;
-  margin-left: 5px;
-  border: 3px solid #ff99ff;
-  background-color: #3399ff;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .col-md-4 {
-  border: 3px solid #ff99ff;
   margin: 5px;
-  background-color: #3399ff;
 }
 
 .col-md-6 {
@@ -78,24 +68,19 @@ header h1 {
   margin-right: auto;
   margin-left: auto;
   padding: 0px;
-  border: 5px solid yellow;
 }
 
 .col-md-8 {
-  border: 3px solid #ff99ff;
   margin: 5px;
-  background-color: #3399ff;
-
 }
 
 .workouts {
   font: 400 24px/1.3 'Oleo Script', Helvetica, sans-serif;
-  color: white;
+  color: #3399ff;
   text-shadow: 1px 1px 0px #ff99ff;
   text-align: center;
-  border: 3px solid #ff99ff;
+
   margin: 5px;
-  background-color: #3399ff;
 }
 
 .listWorkouts {
@@ -116,45 +101,27 @@ input:focus {
   margin: 0px;
 }
 
-.btn-toolbar {
-  margin-left: auto;
-  margin-right: auto;
-  border: 5px solid green;
-}
-.btn-toolbar btn-group {
-
-  border: 5px solid gray;
-}
-
-.btn-toolbar button {
-
-}
-
-.btn {
-  margin-left: 10px;
-  margin-right: 10px;
+.btn-group button {
+  margin: 20px;
 }
 
 .fc-button-group button {
-  height: 30px;
+  margin: 0px;
   width: 30px;
-  border: 5px solid red;
 }
 
 .fc-toolbar {
-  display: inline;
+  font: 12px;
 }
-.fc-toolbar .fc-left {
-    height: 30px;
-    width: 30px;
-    border: 5px solid green;
-    margin-right: auto;
-    margin-left: auto;
+
+.fc button .fc-icon {
+  color: white;
+  height: 0.5px;
+  width: 0.5px;
 }
 
 .fc-toolbar .fc-center {
   text-align: center;
-  border: 5px solid yellow;
 }
 
 .createdWO {
@@ -170,5 +137,5 @@ text-align: center;
 }
 
 .form2 input {
-  
+color: pink
 }

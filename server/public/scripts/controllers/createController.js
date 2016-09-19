@@ -20,11 +20,15 @@ function getActivities() {
 
 //Adds a new activity into the activities database
    $scope.addNewActivity = function() {
+     $scope.activity.name = $scope.name;
+     $scope.activity.type = $scope.type;
       var data = $scope.activity;
       $http.post('/activities', data).then(function(response) {
       if(response.status == 201) {
         console.log("SUCCESS");
         getActivities();
+        $scope.activity = {};
+        console.log($scope.activity);
       } else {
         console.log("Failure", response.data);
       }
@@ -46,7 +50,6 @@ function getActivities() {
      for (var i = 0; i < $scope.workoutActivities.length; i++){
      if($scope.workoutActivities[i]._id == id) {
      $scope.workoutActivities.splice(i, 1);
-     console.log($scope.workoutActivities);
      }
    };
  };
@@ -56,13 +59,6 @@ function getActivities() {
   $scope.saveWorkout = function() {
     $scope.fullWorkout.workoutName = $scope.workoutName;
     $scope.fullWorkout.activities = $scope.workoutActivities;
-    /*
-    $scope.workoutActivities.forEach(function(element, index, array) {
-      
-      $scope.fullWorkout.activity = element.name;
-      $scope.
-    });
-    */
     $scope.fullWorkout.description = $scope.description;
     console.log($scope.fullWorkout);
     var data = $scope.fullWorkout;
